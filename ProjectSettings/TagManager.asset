@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags:
+  - Ground
+  - Enemy
+  - LaserSwitch
+  - Ball
+  - Mallet
+  - RetryButton
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - frame
+  - enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: backGround
+    uniqueID: 3437735299
+    locked: 0
+  - name: shotline
+    uniqueID: 48234113
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: frame
+    uniqueID: 3291094039
+    locked: 0
+  - name: UIFrame
+    uniqueID: 1309117415
+    locked: 0
+  - name: UI
+    uniqueID: 989687875
+    locked: 0
+  - name: RetryUI
+    uniqueID: 996965033
+    locked: 0
+  m_RenderingLayers:
+  - Default
