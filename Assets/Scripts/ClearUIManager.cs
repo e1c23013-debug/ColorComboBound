@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using TMPro;
 
@@ -36,7 +36,7 @@ public class ClearUIManager : MonoBehaviour
 
     }
 
-    //ƒCƒ“ƒXƒyƒNƒ^[‚Åƒ{ƒ^ƒ“‚Éİ’è
+    //ã‚¤ãƒ³ã‚¹ãƒšã‚¯ã‚¿ãƒ¼ã§ãƒœã‚¿ãƒ³ã«è¨­å®š
     public void PushNextStageButton()
     {
 

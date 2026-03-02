@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 
 
@@ -7,12 +7,12 @@ public class TitleManager : MonoBehaviour
 
 
     [SerializeField]
-    private@SoundManager soundManager;
+    privateã€€SoundManager soundManager;
 
     [SerializeField]
     private MySceneManager mySceneManager;
 
-   private bool isChanging = false; // ‘JˆÚ’†‚©
+   private bool isChanging = false; // é·ç§»ä¸­ã‹
 
    
     void Update()
@@ -20,7 +20,7 @@ public class TitleManager : MonoBehaviour
 
         if (isChanging) return;
 
-        if (Input.GetMouseButtonDown(0)) // ¶ƒNƒŠƒbƒN‚ğ‚µ‚½uŠÔ
+        if (Input.GetMouseButtonDown(0)) // å·¦ã‚¯ãƒªãƒƒã‚¯ã‚’ã—ãŸç¬é–“
         {
 
             soundManager.PlayClickSE();
@@ -28,7 +28,7 @@ public class TitleManager : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonUp(0)) // ¶ƒNƒŠƒbƒN‚ğ‚µ‚Ä—£‚µ‚½‚ç
+        if (Input.GetMouseButtonUp(0)) // å·¦ã‚¯ãƒªãƒƒã‚¯ã‚’ã—ã¦é›¢ã—ãŸã‚‰
         {
 
             mySceneManager.ChangeScene("StageSelect");

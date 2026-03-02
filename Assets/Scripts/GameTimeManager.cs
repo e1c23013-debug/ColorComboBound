@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 
 public class GameTimeManager : MonoBehaviour
@@ -37,7 +37,7 @@ public class GameTimeManager : MonoBehaviour
         GameEvents.TutorialClose -= ResumeGame;
     }
 
-    // ƒQ[ƒ€‚ğÄŠJ‚·‚éGameManeger‚æ‚èŒÄ‚Ño‚µ
+    // ã‚²ãƒ¼ãƒ ã‚’å†é–‹ã™ã‚‹GameManegerã‚ˆã‚Šå‘¼ã³å‡ºã—
     public void ResumeGame()
     {
         Time.timeScale = 1.0f;
