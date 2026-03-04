@@ -1,22 +1,10 @@
 fileFormatVersion: 2
-guid: 35e429c101467a84cbbc89d0f1b89c5d
+guid: 4f35dbd13ec61d343a063e936875a062
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4600016010817927106
-    second: AliennGreen_0
-  - first:
-      213: -3229030731718425559
-    second: AliennGreen_1
-  - first:
-      213: -5960413125417510644
-    second: AliennGreen_2
-  - first:
-      213: -1293005156184330465
-    second: AliennGreen_3
-  - first:
-      213: -8718790930071497654
-    second: AliennGreen_4
+      213: 8815662269969364735
+    second: BlackCursor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -63,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 120
+  spritePixelsToUnits: 300
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -135,7 +123,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -151,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AliennGreen_0
+      name: BlackCursor_0
       rect:
         serializedVersion: 2
-        x: 489
-        y: 356
-        width: 47
-        height: 37
+        x: 304
+        y: 271
+        width: 125
+        height: 208
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,96 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3886126fc57920c0800000000000000
-      internalID: -4600016010817927106
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AliennGreen_1
-      rect:
-        serializedVersion: 2
-        x: 606
-        y: 353
-        width: 606
-        height: 592
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9248a1b58ad2033d0800000000000000
-      internalID: -3229030731718425559
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AliennGreen_2
-      rect:
-        serializedVersion: 2
-        x: 1282
-        y: 356
-        width: 47
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c09d9e097db584da0800000000000000
-      internalID: -5960413125417510644
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AliennGreen_3
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 319
-        width: 13
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f1f62ec39a25e0ee0800000000000000
-      internalID: -1293005156184330465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AliennGreen_4
-      rect:
-        serializedVersion: 2
-        x: 1371
-        y: 319
-        width: 13
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a44d03ed7d1a00780800000000000000
-      internalID: -8718790930071497654
+      spriteID: ff6765d8026875a70800000000000000
+      internalID: 8815662269969364735
       vertices: []
       indices: 
       edges: []
@@ -264,7 +164,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -274,11 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AliennGreen_0: -4600016010817927106
-      AliennGreen_1: -3229030731718425559
-      AliennGreen_2: -5960413125417510644
-      AliennGreen_3: -1293005156184330465
-      AliennGreen_4: -8718790930071497654
+      BlackCursor_0: 8815662269969364735
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

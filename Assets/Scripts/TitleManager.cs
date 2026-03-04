@@ -31,7 +31,7 @@ public class TitleManager : MonoBehaviour
         if (Input.GetMouseButtonUp(0)) // 左クリックをして離したら
         {
 
-            mySceneManager.ChangeScene("StageSelect");
+            mySceneManager.ChangeScene(SceneName.StageSelect);
 
 
 

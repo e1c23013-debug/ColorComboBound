@@ -41,7 +41,7 @@ public class DiffusionSwitchManager : MonoBehaviour
     {
         if (GameManager.Instance.IsGameClear) return;
 
-        if (other.CompareTag("Ball")&&isReady==true)
+        if (other.CompareTag(TagName.Ball)&&isReady==true)
         {
 
             isReady = false;

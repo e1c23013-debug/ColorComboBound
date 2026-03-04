@@ -9,15 +9,17 @@ public class BallBehaviour : MonoBehaviour
     //ボールが動いているか
     public bool IsBallMoving { get; private set; }
 
+
+    //インスペクターで設定
     //ボールの基本ヒットダメージ
-    [SerializeField] private int baseDamage = 1;
+    [SerializeField] private int baseDamage ;
     //ボールの コンボダメージ
-    [SerializeField] private int comboDamage = 2;
+    [SerializeField] private int comboDamage ;
 
     //ボールの初期速度
-    [SerializeField] private float moveSpeed = 10f;
+    [SerializeField] private float moveSpeed;
 
-    [SerializeField] private float maxSpeed = 30f;
+    [SerializeField] private float maxSpeed;
 
     private Rigidbody2D rb;
 
@@ -30,15 +32,17 @@ public class BallBehaviour : MonoBehaviour
     private float minAngle = -80f;
     private float maxAngle = 80f;
 
-    private const string tagMallet = "Mallet";
-    private const string tagGround = "Ground";
-    private const string tagEnemy = "Enemy";
+    //衝突時などに物理演算に加えランダムで加える角度
+    private float randomRange = 2.0f;
+
+    //ボールの速度がこれより大きい場合，ボールが動いていると判定
+    private float BallMovingSpeed = 0.001f;
 
 
- 
+
     void OnEnable()
     {
-        GameEvents.OnTurnChanged += CallDamageIni;
+        GameEvents.OnTurnChanged += CallDamageReset;
         GameEvents.IncreaseDamageCombo += IncreaseDamage;
         GameEvents.Diffusion += Diffision;
 
@@ -46,7 +50,7 @@ public class BallBehaviour : MonoBehaviour
 
     void OnDisable()
     {
-        GameEvents.OnTurnChanged -= CallDamageIni;
+        GameEvents.OnTurnChanged -= CallDamageReset;
         GameEvents.IncreaseDamageCombo -= IncreaseDamage;
         GameEvents.Diffusion -= Diffision;
     }
@@ -61,7 +65,7 @@ public class BallBehaviour : MonoBehaviour
     {
         ChangeBallGroundfalse();
         ChangeBallMovingfalse();
-        DamageIni();
+        DamageReset();
         sr = GetComponent<SpriteRenderer>();
         GameEvents.NormalDamage?.Invoke(damage);
         GameEvents.BallMaxSpeed?.Invoke(maxSpeed);
@@ -72,7 +76,6 @@ public class BallBehaviour : MonoBehaviour
     {
         if (rb.linearVelocity.magnitude > maxSpeed) 
         {
-            Debug.Log($"現在の速度: {rb.linearVelocity.magnitude}");
             // 強制ブレーキ
             rb.linearVelocity = rb.linearVelocity.normalized * moveSpeed;
         }
@@ -99,7 +102,7 @@ public class BallBehaviour : MonoBehaviour
         //衝突計算直後の速度ベクトルの方向を真上を基準の角度に変換
         float angle = Vector2.SignedAngle(Vector2.up, rb.linearVelocity.normalized);
 
-        float randomAngle = Random.Range(-2.0f, 2.0f);
+        float randomAngle = Random.Range(-randomRange, randomRange);
 
         float changeAngle = angle + randomAngle;
 
@@ -107,7 +110,7 @@ public class BallBehaviour : MonoBehaviour
 
 
 
-        if (GameManager.Instance.IsGameClear && coll.gameObject.tag == "Ground")
+        if (GameManager.Instance.IsGameClear && coll.gameObject.tag == TagName.Ground)
         {
 
             GameEvents.BallGround?.Invoke();
@@ -118,12 +121,12 @@ public class BallBehaviour : MonoBehaviour
 
 
         }
-        else if (coll.gameObject.tag == tagGround)
+        else if (coll.gameObject.tag == TagName.Ground)
         {
             IsBallGround = true;
 
         }
-        else if (coll.gameObject.tag == tagEnemy)
+        else if (coll.gameObject.tag == TagName.Enemy)
         {
 
 
@@ -141,7 +144,7 @@ public class BallBehaviour : MonoBehaviour
 
 
         }
-        else if (coll.gameObject.tag == tagMallet)
+        else if (coll.gameObject.tag == TagName.Mallet)
         {
 
             GameEvents.BallCollisionMallet?.Invoke();
@@ -151,7 +154,7 @@ public class BallBehaviour : MonoBehaviour
         {
             Vector2 dir = rb.linearVelocity.normalized;
 
-            float angleRandom = Random.Range(-5f, 5f);
+            float angleRandom = Random.Range(-randomRange, randomRange);
 
             dir = Quaternion.Euler(0, 0, angleRandom) * dir;
 
@@ -206,16 +209,16 @@ public class BallBehaviour : MonoBehaviour
 
     }
 
-    private void DamageIni()
+    private void DamageReset()
     {
         damage = baseDamage ;
 
     }
 
     //GameEvents.OnTurnChangedの不要な値を捨てる
-    private void CallDamageIni(int x)
+    private void CallDamageReset(int x)
     {
-        DamageIni();
+        DamageReset();
 
     }
 
@@ -232,7 +235,7 @@ public class BallBehaviour : MonoBehaviour
      
         moveSpeed = newSpeed;
 
-        if (rb.linearVelocity.sqrMagnitude > 0.001f)//ボールが動いているか
+        if (rb.linearVelocity.sqrMagnitude > BallMovingSpeed)//ボールが動いているか
         {
             rb.linearVelocity = rb.linearVelocity.normalized * moveSpeed;
         }

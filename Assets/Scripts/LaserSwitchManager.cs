@@ -16,7 +16,7 @@ public class LaserSwitchManager : MonoBehaviour
     {
         if (GameManager.Instance.IsGameClear) return;
 
-        if (other.CompareTag("Ball"))
+        if (other.CompareTag(TagName.Ball))
         {
             GameEvents.LaserSwitch?.Invoke();
 

@@ -14,6 +14,7 @@ public class ClearUIManager : MonoBehaviour
 
     private float waitClearUIDisplayTime = 0.2f;
 
+    private const string MaxComboFormat = "MAX COMBO ";
 
 
     void OnEnable()
@@ -84,7 +85,7 @@ public class ClearUIManager : MonoBehaviour
     private void SetMaxCombo(int maxCombo)
     {
 
-        tmpMaxCombo.text = "MAX COMBO : " + (maxCombo);
+        tmpMaxCombo.text = MaxComboFormat + (maxCombo);
 
 
     }

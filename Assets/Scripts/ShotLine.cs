@@ -15,6 +15,8 @@ public class ShotLine : MonoBehaviour
     private float minAngle = -80f;
     private float maxAngle = 80f;
 
+    private float searchDistance = 30f;
+
     void Start()
     {
 
@@ -45,7 +47,7 @@ public class ShotLine : MonoBehaviour
         Vector2 direction = Quaternion.Euler(0, 0, clampedAngle) * Vector2.up;
 
 
-        RaycastHit2D hit = Physics2D.Raycast(pos, direction, 30f, frame); 
+        RaycastHit2D hit = Physics2D.Raycast(pos, direction, searchDistance, frame); 
 
         Vector3 hitPosition = hit.point;//world
 
@@ -64,7 +66,7 @@ public class ShotLine : MonoBehaviour
         else
         {
             // 壁に当たっていない：マウスの方向に最大距離伸ばす
-            Vector3 worldEnd = pos + (Vector3)(direction * 30f);
+            Vector3 worldEnd = pos + (Vector3)(direction * searchDistance);
             lr.SetPosition(1, transform.InverseTransformPoint(worldEnd));
         }
 

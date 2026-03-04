@@ -12,7 +12,10 @@ public class PlayUIManager : MonoBehaviour
 
     private TextMeshProUGUI tmpCombo;
 
-   
+    private const string TurnLimitFormat = "TURN\nLimit ";
+
+    private const string ComboFormat = "Combo\n";
+
     void OnEnable()
     {
         GameEvents.OnTurnChanged += ChangeTurnUI;
@@ -29,8 +32,8 @@ public class PlayUIManager : MonoBehaviour
     {
        tmpTurn = turnUI.GetComponent<TextMeshProUGUI>();
         tmpCombo = comboUI.GetComponent<TextMeshProUGUI>();
-        tmpTurn.text = "TURN\nLimit " ;
-        tmpCombo.text = "Combo\n" ;
+        tmpTurn.text = TurnLimitFormat;
+        tmpCombo.text = ComboFormat;
 
     }
     
@@ -39,14 +42,14 @@ public class PlayUIManager : MonoBehaviour
     private void ChangeTurnUI(int RestTurn)
     {
 
-        tmpTurn.text = "TURN\nLimit " + (RestTurn + 1);
+        tmpTurn.text = TurnLimitFormat + (RestTurn + 1);
 
     }
 
     private void ChangeComboUI(int combo)
     {
 
-        tmpCombo.text = "Combo\n"+ (combo);
+        tmpCombo.text = ComboFormat + (combo);
 
 
     }

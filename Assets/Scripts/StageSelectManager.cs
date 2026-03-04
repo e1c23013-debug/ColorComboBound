@@ -18,21 +18,21 @@ public class StageSelectManager : MonoBehaviour
     public void PushStage1Button()
     {
 
-        mySceneManager.ChangeScene("Stage1");
+        mySceneManager.ChangeScene(SceneName.Stage1);
 
     }
-    public void PushStage2tButton()
+    public void PushStage2Button()
     {
 
 
-        mySceneManager.ChangeScene("Stage2");
+        mySceneManager.ChangeScene(SceneName.Stage2);
 
     }
     public void PushStage3Button()
     {
 
 
-        mySceneManager.ChangeScene("Stage3");
+        mySceneManager.ChangeScene(SceneName.Stage3);
 
     }
 

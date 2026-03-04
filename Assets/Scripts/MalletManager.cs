@@ -19,6 +19,11 @@ public class MalletManager : MonoBehaviour
 
     private bool isRightClicking;
 
+    private float searchDistance = 50f;
+
+    //マレットの動かせるデフォルトの距離
+    private float defaultDistance = 10f;
+
 
     void OnEnable()
     {
@@ -39,8 +44,7 @@ public class MalletManager : MonoBehaviour
 
         offset = sr.bounds.extents.x;
 
-        Debug.Log($"offset={offset}");
-
+       
         mainCamera = Camera.main;
         if (mallet != null)
         {
@@ -92,8 +96,8 @@ public class MalletManager : MonoBehaviour
     private void CalculateBoundaries()
     {
         // マレットの現在地から左右にRaycastしてframeとの衝突位置を調べる
-        RaycastHit2D hitRight = Physics2D.Raycast(rb.position, Vector2.right, 50f, frame);
-        RaycastHit2D hitLeft = Physics2D.Raycast(rb.position, Vector2.left, 50f, frame);
+        RaycastHit2D hitRight = Physics2D.Raycast(rb.position, Vector2.right, searchDistance, frame);
+        RaycastHit2D hitLeft = Physics2D.Raycast(rb.position, Vector2.left, searchDistance, frame);
 
         //maxX (右の限界)を求める
         if (hitRight.collider != null)
@@ -104,7 +108,7 @@ public class MalletManager : MonoBehaviour
         else
         {
             // 壁が見つからなかった場合のデフォルト値
-            maxX = 10.0f;
+            maxX = defaultDistance;
         }
 
         //  minX(左の限界)を求める
@@ -116,7 +120,7 @@ public class MalletManager : MonoBehaviour
         else
         {
             // 壁が見つからなかった場合のデフォルト値
-            minX = -10.0f;
+            minX = -defaultDistance;
         }
 
     }

@@ -6,6 +6,8 @@ public class Mallet : MonoBehaviour
     //衝突時に重複して呼び出されるのを防ぐためのフラグ
     private　bool isProcessingHitMallet = false;
 
+    private float invalidTime=0.01f;
+
     void OnEnable()
     {
         GameEvents.BallCollisionMallet += InformMalletPushBall;
@@ -27,7 +29,7 @@ public class Mallet : MonoBehaviour
 
         GameEvents.MalletPushBall?.Invoke();
 
-        Invoke(nameof(ResetFlag), 0.1f);
+        Invoke(nameof(ResetFlag), invalidTime);
 
     }
 

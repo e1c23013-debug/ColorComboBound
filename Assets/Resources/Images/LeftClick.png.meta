@@ -1,22 +1,19 @@
 fileFormatVersion: 2
-guid: 35e429c101467a84cbbc89d0f1b89c5d
+guid: 53b433266ceecde4185b05d41b037eef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4600016010817927106
-    second: AliennGreen_0
+      213: -3254304005718266515
+    second: LeftClick_0
   - first:
-      213: -3229030731718425559
-    second: AliennGreen_1
+      213: -7267171199394600743
+    second: LeftClick_1
   - first:
-      213: -5960413125417510644
-    second: AliennGreen_2
+      213: -2559196606423874839
+    second: LeftClick_2
   - first:
-      213: -1293005156184330465
-    second: AliennGreen_3
-  - first:
-      213: -8718790930071497654
-    second: AliennGreen_4
+      213: 3067839711713870070
+    second: LeftClick_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,12 +55,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 120
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -122,7 +119,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: iOS
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -135,7 +132,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: iOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -151,13 +148,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: AliennGreen_0
+      name: LeftClick_0
       rect:
         serializedVersion: 2
-        x: 489
-        y: 356
-        width: 47
-        height: 37
+        x: 92
+        y: 212
+        width: 24
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e3886126fc57920c0800000000000000
-      internalID: -4600016010817927106
+      spriteID: d6d2804bfb366d2d0800000000000000
+      internalID: -3254304005718266515
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AliennGreen_1
+      name: LeftClick_1
       rect:
         serializedVersion: 2
-        x: 606
-        y: 353
-        width: 606
-        height: 592
+        x: 103
+        y: 55
+        width: 115
+        height: 165
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9248a1b58ad2033d0800000000000000
-      internalID: -3229030731718425559
+      spriteID: 9d8a22a1c42d52b90800000000000000
+      internalID: -7267171199394600743
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AliennGreen_2
+      name: LeftClick_2
       rect:
         serializedVersion: 2
-        x: 1282
-        y: 356
-        width: 47
-        height: 37
+        x: 124
+        y: 217
+        width: 12
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,20 +207,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c09d9e097db584da0800000000000000
-      internalID: -5960413125417510644
+      spriteID: 9e248b3ee38eb7cd0800000000000000
+      internalID: -2559196606423874839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: AliennGreen_3
+      name: LeftClick_3
       rect:
         serializedVersion: 2
-        x: 434
-        y: 319
-        width: 13
-        height: 19
+        x: 82
+        y: 191
+        width: 28
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -232,30 +229,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1f62ec39a25e0ee0800000000000000
-      internalID: -1293005156184330465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: AliennGreen_4
-      rect:
-        serializedVersion: 2
-        x: 1371
-        y: 319
-        width: 13
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a44d03ed7d1a00780800000000000000
-      internalID: -8718790930071497654
+      spriteID: 6f0ca84b6f7239a20800000000000000
+      internalID: 3067839711713870070
       vertices: []
       indices: 
       edges: []
@@ -274,11 +249,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      AliennGreen_0: -4600016010817927106
-      AliennGreen_1: -3229030731718425559
-      AliennGreen_2: -5960413125417510644
-      AliennGreen_3: -1293005156184330465
-      AliennGreen_4: -8718790930071497654
+      LeftClick_0: -3254304005718266515
+      LeftClick_1: -7267171199394600743
+      LeftClick_2: -2559196606423874839
+      LeftClick_3: 3067839711713870070
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

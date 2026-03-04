@@ -44,7 +44,8 @@ public class GameManager : MonoBehaviour
 
     private Vector2 shotMousepos;
 
-
+    //メインカメラのz座標
+    private int mainCameraZ = -10;
 
    
 
@@ -223,7 +224,7 @@ public class GameManager : MonoBehaviour
             // カーソル位置を取得
             Vector3 MousePosition = Input.mousePosition;
             // カーソル位置のz座標を0に
-            MousePosition.z = 10;
+            MousePosition.z = -mainCameraZ;
 
             // カーソル位置からワールド座標に変換
             Mousepos = mainCamera.ScreenToWorldPoint(MousePosition);
@@ -267,7 +268,7 @@ public class GameManager : MonoBehaviour
     private void ChangeStageSelectScene()
     {
         gameTimeManager.ResumeGame();
-        mySceneManager.ChangeScene("StageSelect");
+        mySceneManager.ChangeScene(SceneName.StageSelect);
 
 
     }

@@ -14,7 +14,8 @@ public class LaserLauncherManager : MonoBehaviour
     [SerializeField] private float laserLength = 30f;
     //レーザーのダメージ
     [SerializeField] private int damage = 1;
-    
+
+    private int positionNumber = 2;
     void Start()
     {
 
@@ -50,7 +51,7 @@ public class LaserLauncherManager : MonoBehaviour
 
         Vector3 localHitDowm = transform.InverseTransformPoint(hitDownPosition);//local
 
-        lr.positionCount = 2;
+        lr.positionCount = positionNumber;
 
         //始点はこのオブジェクトであり，ローカル座標で考える
         lr.SetPosition(0, Vector3.zero);

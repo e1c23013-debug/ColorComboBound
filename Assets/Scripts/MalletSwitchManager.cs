@@ -31,7 +31,7 @@ public class MalletSwitchManager : MonoBehaviour
         if (GameManager.Instance.IsGameClear) return;
         if (isSwitchPushed) return;
 
-        if (other.CompareTag("Ball"))
+        if (other.CompareTag(TagName.Ball))
         {
             isSwitchPushed = true;
             sr.sprite= malletSwitchTransparent;
