@@ -54,9 +54,9 @@ public class InstructingCanvasManager : MonoBehaviour
 
     public void PushInstructionCloseButton()
     {
-
-        InstructingCanvas.SetActive(false);
         GameEvents.InstructionCloseButtonPushed?.Invoke();
+        InstructingCanvas.SetActive(false);
+        
     }
 
 

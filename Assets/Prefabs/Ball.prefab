@@ -169,7 +169,7 @@ MonoBehaviour:
   baseDamage: 1
   comboDamage: 2
   moveSpeed: 9
-  maxSpeed: 13
+  maxSpeed: 11
 --- !u!1 &7521923169442473389
 GameObject:
   m_ObjectHideFlags: 0

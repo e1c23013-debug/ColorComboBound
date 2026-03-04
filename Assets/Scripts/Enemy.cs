@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
 
     private Animator anim;
     //Attackedを数値に変換しておく
-    private static readonly int AttackedHash = Animator.StringToHash("Attacked");
+    private static readonly int attackedHash = Animator.StringToHash("Attacked");
 
     //条件を満たさない場合敵が維持するHP
     private int endureHP = 1;
@@ -100,7 +100,7 @@ public class Enemy : MonoBehaviour
         currentHP = currentHP - damage;
         GameEvents.EnemyHitColor.Invoke(Color,currentHP,maxHP);
 
-        anim.SetTrigger(AttackedHash);
+        anim.SetTrigger(attackedHash);
 
 
         if (currentHP <= 0)
@@ -153,7 +153,7 @@ public class Enemy : MonoBehaviour
         currentHP = currentHP - damage;
         GameEvents.EnemyHitColor.Invoke(Color, currentHP, maxHP);
 
-        anim.SetTrigger(AttackedHash);
+        anim.SetTrigger(attackedHash);
 
         if (currentHP <= 0)
         {

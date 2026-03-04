@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,8 +23,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TutorialCanvasManager tutorialCanvasManager;
 
-    [SerializeField] private CanvasGroup uiCanvasGroup;
+    [SerializeField]
+    private InstructingAnimationsManager instructingAnimationsManager;
 
+    [SerializeField] private CanvasGroup uiCanvasGroup;
 
     //インスペクターで指定
     [SerializeField] private string nextStage;
@@ -34,10 +37,6 @@ public class GameManager : MonoBehaviour
 
     private bool isClickUI = false;
 
-    private static bool isFirstTime = true;//ステージを選択した最初のプレイか判定
-
-    private static string lastSceneName = "";
-
     private Camera mainCamera;
 
     private bool isLeftClickReleased=false;
@@ -47,7 +46,10 @@ public class GameManager : MonoBehaviour
     //メインカメラのz座標
     private int mainCameraZ = -10;
 
-   
+    //  プレイされたステージを記録
+    private static HashSet<string> playedStages = new HashSet<string>();
+
+
 
     void OnEnable()
     {
@@ -64,6 +66,10 @@ public class GameManager : MonoBehaviour
         GameEvents.PushStageSelectButton += ChangeStageSelectScene;
 
         GameEvents.PushNextStageButton += ChangeNextStageScene;
+
+        GameEvents.StartShotTutorialAnimation += ChangeInputLockedtrue;
+
+        GameEvents.EndShotTutorialAnimation += ChangeInputLockedfalse;
 
     }
 
@@ -82,6 +88,9 @@ public class GameManager : MonoBehaviour
 
         GameEvents.PushNextStageButton -= ChangeNextStageScene;
 
+        GameEvents.StartShotTutorialAnimation -= ChangeInputLockedtrue;
+
+        GameEvents.EndShotTutorialAnimation -= ChangeInputLockedfalse;
     }
 
     void Awake()
@@ -97,17 +106,21 @@ public class GameManager : MonoBehaviour
        
         string currentScene = SceneManager.GetActiveScene().name;
 
-        if (lastSceneName != currentScene)
+        
+
+        //現在ステージ1の時はInstructingAnimationsManagerにステージ１であることを教える
+        if (currentScene == SceneName.Stage1)
         {
-            isFirstTime = true; // シーンが変わっているため
+            instructingAnimationsManager.ChangeIsStage1True();
         }
 
         turnManager.StartTurnChange();
 
-        if (isFirstTime)
+        if (!playedStages.Contains(currentScene))
         {
             tutorialCanvasManager.DisplayTutorial();
-            isFirstTime = false; // 同じシーン内（リトライ等）ではもうチュートリアルを出さないようにする
+
+            playedStages.Add(currentScene);
         }
         //シーンが再読み込みされたときは前のsoundManager(最初に定義したインスタンス)は使えないためSoundManager.Instanceという書き方
         if (SoundManager.Instance != null)
@@ -115,7 +128,6 @@ public class GameManager : MonoBehaviour
             SoundManager.Instance.AssignButtonSounds();
         }
 
-        lastSceneName = currentScene; // 今のシーン名を記録
     }
 
     // Update is called once per frame
@@ -245,18 +257,21 @@ public class GameManager : MonoBehaviour
         isInputLocked = true;
     }
 
+    private void ChangeInputLockedfalse()
+    {
+
+        isInputLocked = false;
+    }
 
     private void ChangeGameClearTrue()
     {
-
-        IsGameClear = true;
+　　　     IsGameClear = true;
     }
 
 
     private void LoadScene()
     {
         uiCanvasGroup.interactable = false;
-        isFirstTime = false;
         string currentSceneName = SceneManager.GetActiveScene().name;
         gameTimeManager.ResumeGame();
         mySceneManager.ChangeScene(currentSceneName);
@@ -278,6 +293,5 @@ public class GameManager : MonoBehaviour
         mySceneManager.ChangeScene(nextStage);
 
     }
-
 
 }

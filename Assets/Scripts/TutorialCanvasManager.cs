@@ -54,10 +54,10 @@ public class TutorialCanvasManager : MonoBehaviour
 
     public void PushTutorialCloseButton()
     {
+        GameEvents.TutorialClose?.Invoke();
 
         TutorialCanvas.SetActive(false);
-        currentIndex = 0;
-        GameEvents.TutorialClose?.Invoke();
+       
     }
 
 

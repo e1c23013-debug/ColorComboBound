@@ -128,10 +128,7 @@ public class BallBehaviour : MonoBehaviour
         }
         else if (coll.gameObject.tag == TagName.Enemy)
         {
-
-
-           
-              
+          
             Enemy enemy = coll.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
@@ -244,7 +241,5 @@ public class BallBehaviour : MonoBehaviour
 
 
     }
-
-
 
 }

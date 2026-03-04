@@ -19,6 +19,7 @@ public class GameTimeManager : MonoBehaviour
         GameEvents.DisplayTutorial += PauseGame;
 
         GameEvents.TutorialClose += ResumeGame;
+
     }
 
 
@@ -35,6 +36,7 @@ public class GameTimeManager : MonoBehaviour
         GameEvents.DisplayTutorial -= PauseGame;
 
         GameEvents.TutorialClose -= ResumeGame;
+
     }
 
     // ゲームを再開するGameManegerより呼び出し

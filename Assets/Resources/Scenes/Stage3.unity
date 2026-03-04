@@ -545,6 +545,7 @@ MonoBehaviour:
   gameTimeManager: {fileID: 721479527}
   mySceneManager: {fileID: 545359316}
   tutorialCanvasManager: {fileID: 1539690936}
+  instructingAnimationsManager: {fileID: 0}
   uiCanvasGroup: {fileID: 1589822080}
   nextStage: Stage3
 --- !u!4 &88623550
@@ -10453,7 +10454,7 @@ Transform:
   m_GameObject: {fileID: 2132217805}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.168, y: -3.1956, z: -811.32245}
+  m_LocalPosition: {x: -5.65, y: -3.29, z: -811.32245}
   m_LocalScale: {x: 0.60151845, y: 0.56574506, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -103,12 +103,17 @@ public static class GameEvents
     //説明のクローズボタンが押されたら通知
     public static Action InstructionCloseButtonPushed;
 
-    //初めに説明を表示するときに通知
+    //チュートリアル説明を表示するときに通知
     public static Action DisplayTutorial;
 
-    //初めの説明のクローズボタンが押されたら通知
+    //チュートリアル説明のクローズボタンが押されたら通知
     public static Action TutorialClose;
 
+    //ショットチュートリアルアニメーションの再生開始時通知
+    public static Action StartShotTutorialAnimation;
+
+    //ショットチュートリアルアニメーションの再生終了時通知
+    public static Action EndShotTutorialAnimation;
 
 
 }
