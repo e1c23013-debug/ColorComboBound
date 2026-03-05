@@ -12,6 +12,7 @@ public class TitleManager : MonoBehaviour
     [SerializeField]
     private MySceneManager mySceneManager;
 
+
    private bool isChanging = false; // 遷移中か
 
    

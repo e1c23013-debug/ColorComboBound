@@ -30,7 +30,7 @@ public class InstructingAnimationsManager : MonoBehaviour
 
         anim=GetComponent<Animator>();
 
-        isStage1 = false;
+        isStage1 = false;//初期化
 
     }
    
