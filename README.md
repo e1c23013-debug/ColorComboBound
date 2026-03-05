@@ -44,7 +44,11 @@
 
 ### 4.3. 物理演算とRaycastを活用した動的制御
 * **MalletManager.cs**: マレットの可動域を制限する際、固定の数値を指定するのではなく、`Physics2D.Raycast` を用いて左右の壁（フレーム）までの距離を動的に計算し、ステージの形状に依存しない汎用的な制御を行っています。
-* **LaserLauncherManager.cs**: レーザーの描画および当たり判定処理において、Raycastを用いて障害物までの距離を取得し、`LineRenderer` の描画終点をローカル座標系に変換して正確に反映させています。
+* **LaserLauncherMa
+
+https://github.com/user-attachments/assets/705ad965-19de-4105-919d-227cf295631a
+
+nager.cs**: レーザーの描画および当たり判定処理において、Raycastを用いて障害物までの距離を取得し、`LineRenderer` の描画終点をローカル座標系に変換して正確に反映させています。
 
 ## 5. テストプレイ時の要望と改善
 
