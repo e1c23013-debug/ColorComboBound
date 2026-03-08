@@ -44,7 +44,7 @@ https://github.com/user-attachments/assets/705ad965-19de-4105-919d-227cf295631a
 * 各Managerクラス内のステータス制限値や角度の限界値などは変数として明示的に定義し、計算の意味を読み取りやすくしています。
 
 ### 4.3. 物理演算とRaycastを活用した動的制御
-* [MalletManager.cs]./Assets/Scripts/MalletManager.cs): マレットの可動域を制限する際、固定の数値を指定するのではなく、`Physics2D.Raycast` を用いて左右の壁（フレーム）までの距離を動的に計算し、ステージの形状に依存しない汎用的な制御を行っています。
+* [MalletManager.cs](./Assets/Scripts/MalletManager.cs): マレットの可動域を制限する際、固定の数値を指定するのではなく、`Physics2D.Raycast` を用いて左右の壁（フレーム）までの距離を動的に計算し、ステージの形状に依存しない汎用的な制御を行っています。
 * [LaserLauncherManager.cs](./Assets/Scripts/LaserLauncherManager.cs): レーザーの描画および当たり判定処理において、Raycastを用いて障害物までの距離を取得し、`LineRenderer` の描画終点をローカル座標系に変換して正確に反映させています。
 
 ## 5. テストプレイ時の要望と改善
