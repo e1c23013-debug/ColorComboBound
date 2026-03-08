@@ -35,17 +35,17 @@ https://github.com/user-attachments/assets/705ad965-19de-4105-919d-227cf295631a
 
 ### 4.1. イベントシステムによる疎結合な設計
 各クラス（Manager）が直接他のクラスを参照する状態を避けるため、Observerパターンを活用したイベント駆動型の設計を採用しています。
-具体的には、`GameEvents.cs`(./Assets/Scripts/GameEvents.cs) に `System.Action` デリゲートを集約し、すべてのイベント（ターン変更、ボールの衝突、ギミックの発動、敵の撃破など）をこのクラス経由で通知し、各クラスが自身の必要な処理だけを実行する仕組みを構築しました。
+具体的には、[GameEvents.cs](./Assets/Scripts/GameEvents.cs) に `System.Action` デリゲートを集約し、すべてのイベント（ターン変更、ボールの衝突、ギミックの発動、敵の撃破など）をこのクラス経由で通知し、各クラスが自身の必要な処理だけを実行する仕組みを構築しました。
 これによりクラス間の結合度が大幅に下がり、コードの可読性向上や、UIの追加、新しいギミックの実装が容易になっています。
 
 ### 4.2. マジックナンバーの排除
 コード内の可読性を低下させるマジックナンバーや直接的な文字列の指定を排除しています。
-* `TagName.cs`(./Assets/Scripts/TagName.cs) や `SceneName.cs`(./Assets/Scripts/TSceneName.cs) といった静的クラスを作成し、タグやシーン名を定数として一元管理することで、タイプミスによるバグを未然に防いでいます。
+* [TagName.cs](./Assets/Scripts/TagName.cs) や [SceneName.cs](./Assets/Scripts/TSceneName.cs) といった静的クラスを作成し、タグやシーン名を定数として一元管理することで、タイプミスによるバグを未然に防いでいます。
 * 各Managerクラス内のステータス制限値や角度の限界値などは変数として明示的に定義し、計算の意味を読み取りやすくしています。
 
 ### 4.3. 物理演算とRaycastを活用した動的制御
-* **MalletManager.cs**(./Assets/Scripts/MalletManager.cs): マレットの可動域を制限する際、固定の数値を指定するのではなく、`Physics2D.Raycast` を用いて左右の壁（フレーム）までの距離を動的に計算し、ステージの形状に依存しない汎用的な制御を行っています。
-* **LaserLauncherManager.cs**(./Assets/Scripts/LaserLauncherManager.cs): レーザーの描画および当たり判定処理において、Raycastを用いて障害物までの距離を取得し、`LineRenderer` の描画終点をローカル座標系に変換して正確に反映させています。
+* [MalletManager.cs]./Assets/Scripts/MalletManager.cs): マレットの可動域を制限する際、固定の数値を指定するのではなく、`Physics2D.Raycast` を用いて左右の壁（フレーム）までの距離を動的に計算し、ステージの形状に依存しない汎用的な制御を行っています。
+* [LaserLauncherManager.cs](./Assets/Scripts/LaserLauncherManager.cs): レーザーの描画および当たり判定処理において、Raycastを用いて障害物までの距離を取得し、`LineRenderer` の描画終点をローカル座標系に変換して正確に反映させています。
 
 ## 5. テストプレイ時の要望と改善
 
